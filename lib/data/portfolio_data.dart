@@ -14,102 +14,144 @@ abstract final class PortfolioData {
   // ── Personal ─────────────────────────────────────────
   static const String name = 'Nandu\nViswanathan.';
   static const String greeting = "Hey there! I'm";
-  static const String email = 'mailto:hello@nanduv.dev';
+  static const String email = 'mailto:nanduvishwanathan@gmail.com';
 
   // ── Hero typewriter lines ────────────────────────────
   static const List<String> typewriterLines = [
-    'Architecting Clouds & Crafting Apps.',
-    'Flutter Developer. Node.js Wizard.',
-    'Cloud Architect. Problem Solver.',
+    'Senior Software Engineer. 5+ Years.',
+    'Flutter Specialist. iOS Native Dev. Node.js Wizard.',
+    'Building Apps that Matter.',
   ];
 
   // ── About ────────────────────────────────────────────
   static const String bioLeading =
-      "I'm a passionate full-stack engineer who lives at the intersection of ";
-  static const String bioHighlight1 = 'beautiful front-end experiences';
-  static const String bioMid = ' and ';
-  static const String bioHighlight2 = 'scalable cloud infrastructure';
+      "I'm a Senior Software Engineer with 5+ years of experience, specializing in ";
+  static const String bioHighlight1 =
+      'Flutter & native iOS development';
+  static const String bioMid = ' with deep expertise in ';
+  static const String bioHighlight2 =
+      'IoT, BLE, and real-time communication';
   static const String bioTrailing =
-      ". From pixel-perfect Flutter apps to globally distributed Node.js APIs "
-      "and robust AWS/GCP architectures — I ship the whole stack.\n\n"
-      "I believe great products are born when design thinking meets engineering "
-      "excellence. Whether it's orchestrating Kubernetes clusters, designing "
-      "serverless pipelines, or crafting micro-interactions in Flutter — I bring "
-      "the same energy and obsessive attention to detail.";
+      ". I build high-performance, scalable mobile applications — from "
+      "FDA-compliant medical device monitors to smart thermostat controllers "
+      "and real-time warehouse tracking systems.\n\n"
+      "Currently a Senior Software Engineer at Gadgeon Smart Systems, I lead "
+      "complex mobile projects integrating payment gateways, IoT protocols, "
+      "and cloud platforms. I'm passionate about clean architecture (MVVM), "
+      "mentoring developers, and shipping products that deliver seamless "
+      "user experiences.";
 
   static const List<({String label, Color color})> skillChips = [
     (label: 'Flutter', color: AppColors.electricBlue),
-    (label: 'Node.js', color: AppColors.cyberpunkPink),
-    (label: 'AWS', color: AppColors.electricBlue),
-    (label: 'GCP', color: AppColors.cyberpunkPink),
-    (label: 'React', color: AppColors.electricBlue),
-    (label: 'Docker', color: AppColors.cyberpunkPink),
-    (label: 'Kubernetes', color: AppColors.electricBlue),
+    (label: 'Dart', color: AppColors.cyberpunkPink),
+    (label: 'Swift', color: AppColors.electricBlue),
     (label: 'Firebase', color: AppColors.cyberpunkPink),
+    (label: 'REST API', color: AppColors.electricBlue),
+    (label: 'BLE', color: AppColors.cyberpunkPink),
+    (label: 'MQTT', color: AppColors.electricBlue),
+    (label: 'IoT', color: AppColors.cyberpunkPink),
+    (label: 'MVVM', color: AppColors.electricBlue),
+    (label: 'Stripe', color: AppColors.cyberpunkPink),
   ];
 
   // ── Tech Stack ───────────────────────────────────────
   static const List<TechItemModel> techStack = [
-    TechItemModel(name: 'Flutter', icon: Icons.flutter_dash, color: AppColors.electricBlue),
-    TechItemModel(name: 'Dart', icon: Icons.code, color: AppColors.cyberpunkPink),
-    TechItemModel(name: 'Node.js', icon: Icons.dns, color: Color(0xFF68A063)),
-    TechItemModel(name: 'React', icon: Icons.web, color: Color(0xFF61DAFB)),
-    TechItemModel(name: 'AWS', icon: Icons.cloud, color: Color(0xFFFF9900)),
-    TechItemModel(name: 'GCP', icon: Icons.cloud_queue, color: Color(0xFF4285F4)),
-    TechItemModel(name: 'Docker', icon: Icons.directions_boat, color: Color(0xFF2496ED)),
-    TechItemModel(name: 'Kubernetes', icon: Icons.hub, color: Color(0xFF326CE5)),
-    TechItemModel(name: 'Firebase', icon: Icons.local_fire_department, color: Color(0xFFFFCA28)),
-    TechItemModel(name: 'PostgreSQL', icon: Icons.storage, color: Color(0xFF336791)),
-    TechItemModel(name: 'MongoDB', icon: Icons.eco, color: Color(0xFF47A248)),
-    TechItemModel(name: 'GraphQL', icon: Icons.auto_graph, color: Color(0xFFE10098)),
+    TechItemModel(
+      name: 'Flutter',
+      icon: Icons.flutter_dash,
+      color: AppColors.electricBlue,
+    ),
+    TechItemModel(
+      name: 'Dart',
+      icon: Icons.code,
+      color: AppColors.cyberpunkPink,
+    ),
+    TechItemModel(
+      name: 'Swift',
+      icon: Icons.apple,
+      color: Color(0xFFFA7343),
+    ),
+    TechItemModel(
+      name: 'Firebase',
+      icon: Icons.local_fire_department,
+      color: Color(0xFFFFCA28),
+    ),
+    TechItemModel(
+      name: 'REST API',
+      icon: Icons.api,
+      color: Color(0xFF61DAFB),
+    ),
+    TechItemModel(
+      name: 'BLE',
+      icon: Icons.bluetooth,
+      color: Color(0xFF0082FC),
+    ),
+    TechItemModel(
+      name: 'MQTT',
+      icon: Icons.cell_tower,
+      color: Color(0xFF660066),
+    ),
+    TechItemModel(
+      name: 'IoT',
+      icon: Icons.devices_other,
+      color: Color(0xFF00B894),
+    ),
+    TechItemModel(
+      name: 'Provider',
+      icon: Icons.account_tree,
+      color: Color(0xFF6C5CE7),
+    ),
+    TechItemModel(
+      name: 'GetX',
+      icon: Icons.speed,
+      color: Color(0xFF8E44AD),
+    ),
+    TechItemModel(
+      name: 'Git',
+      icon: Icons.merge_type,
+      color: Color(0xFFF05032),
+    ),
+    TechItemModel(
+      name: 'Stripe',
+      icon: Icons.payment,
+      color: Color(0xFF635BFF),
+    ),
   ];
 
   // ── Projects ─────────────────────────────────────────
   static const List<ProjectModel> projects = [
     ProjectModel(
-      title: 'CloudSync Dashboard',
+      title: 'Smart Thermostat Control',
       description:
-          'A real-time cloud monitoring dashboard built with Flutter Web & '
-          'Firebase, featuring live metrics, alerts, and beautiful charts.',
-      tags: ['Flutter Web', 'Firebase', 'Charts'],
+          'A robust IoT mobile app enabling communication with smart thermostat '
+          'devices via REST API & MQTT. Features real-time monitoring, GPS '
+          'location sharing, weekly HVAC scheduling, pet monitoring, and '
+          'integrated auto-payments via Stripe.',
+      tags: ['Flutter', 'MQTT', 'IoT', 'REST API', 'Stripe'],
       gradient: [AppColors.cyberpunkPink, Color(0xFF8B0050)],
-      icon: Icons.dashboard,
+      icon: Icons.thermostat,
     ),
     ProjectModel(
-      title: 'NodeForge API',
+      title: 'Medical Device Monitor',
       description:
-          'A high-performance REST & GraphQL API gateway running on AWS Lambda '
-          'with auto-scaling and zero-downtime deployments.',
-      tags: ['Node.js', 'GraphQL', 'AWS Lambda'],
-      gradient: [AppColors.electricBlue, Color(0xFF0080AA)],
-      icon: Icons.api,
-    ),
-    ProjectModel(
-      title: 'FlutterFolio',
-      description:
-          'A beautiful cross-platform portfolio builder app with drag-and-drop '
-          'widgets, export to PDF, and custom themes.',
-      tags: ['Flutter', 'Dart', 'Hive'],
-      gradient: [Color(0xFF7C3AED), Color(0xFF4C1D95)],
-      icon: Icons.apps,
-    ),
-    ProjectModel(
-      title: 'InfraBot',
-      description:
-          'An intelligent Slack bot that manages cloud infrastructure — spin up '
-          'VMs, check billing, deploy updates — all via chat.',
-      tags: ['Node.js', 'GCP', 'Slack API'],
-      gradient: [Color(0xFFFF6B35), Color(0xFFCC4400)],
-      icon: Icons.smart_toy,
-    ),
-    ProjectModel(
-      title: 'MediTrack',
-      description:
-          'A HIPAA-compliant mobile health app for tracking medications, '
-          'appointments, and health metrics with offline-first architecture.',
-      tags: ['Flutter', 'SQLite', 'BLoC'],
+          'An FDA-compliant application for monitoring patient data using BLE '
+          'and REST API. Features offline-first architecture with auto-sync, '
+          'therapy scheduling via local notifications, and a clean, intuitive '
+          'Flutter UI built to stringent regulatory standards.',
+      tags: ['Flutter', 'BLE', 'FDA', 'Offline-First'],
       gradient: [Color(0xFF10B981), Color(0xFF047857)],
       icon: Icons.health_and_safety,
+    ),
+    ProjectModel(
+      title: 'Warehouse Asset Tracker',
+      description:
+          'A real-time asset tracking system with optimized shortest-path '
+          'calculation. Built with MQTT for efficient real-time communication, '
+          'REST API integration, and C++ modules for high-performance '
+          'pathfinding algorithms.',
+      tags: ['Flutter', 'MQTT', 'C++', 'Real-Time'],
+      gradient: [AppColors.electricBlue, Color(0xFF0080AA)],
+      icon: Icons.warehouse,
     ),
   ];
 
@@ -119,32 +161,32 @@ abstract final class PortfolioData {
     (
       icon: FontAwesomeIcons.github,
       label: 'GitHub',
-      url: 'https://github.com/nanduv',
+      url: 'https://github.com/nanduviswanathan',
       color: AppColors.white,
     ),
     (
       icon: FontAwesomeIcons.linkedin,
       label: 'LinkedIn',
-      url: 'https://linkedin.com/in/nanduv',
+      url: 'https://www.linkedin.com/in/nanduviswanathan',
       color: Color(0xFF0A66C2),
-    ),
-    (
-      icon: FontAwesomeIcons.xTwitter,
-      label: 'Twitter',
-      url: 'https://twitter.com/nanduv',
-      color: AppColors.white,
     ),
     (
       icon: Icons.email,
       label: 'Email',
-      url: 'mailto:hello@nanduv.dev',
+      url: 'mailto:nanduvishwanathan@gmail.com',
       color: AppColors.cyberpunkPink,
+    ),
+    (
+      icon: Icons.phone,
+      label: 'Call',
+      url: 'tel:+919946421621',
+      color: AppColors.electricBlue,
     ),
   ];
 
   static const String contactHeadline =
-      "Got a project in mind? Want to collaborate on something awesome?\n"
-      "I'm always open to discussing new ideas and opportunities.";
+      "Have a Flutter project or an IoT app idea? Let's build it together.\n"
+      "I'm always open to discussing exciting mobile development opportunities.";
 
   static const String footerText =
       '© 2026 Nandu Viswanathan. Built with Flutter & a lot of caffeine.';
