@@ -136,15 +136,16 @@ class _ProjectCardState extends State<_ProjectCard> {
               ),
               const SizedBox(height: 10),
               Expanded(
-                child: Text(
-                  widget.project.description,
-                  style: GoogleFonts.poppins(
-                    fontSize: 13,
-                    color: AppColors.grey,
-                    height: 1.6,
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: Text(
+                    widget.project.description,
+                    style: GoogleFonts.poppins(
+                      fontSize: 13,
+                      color: AppColors.grey,
+                      height: 1.6,
+                    ),
                   ),
-                  maxLines: 5,
-                  overflow: TextOverflow.ellipsis,
                 ),
               ),
               const SizedBox(height: 16),

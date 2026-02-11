@@ -27,31 +27,34 @@ abstract final class PortfolioData {
   static const String bioLeading =
       "I'm a Senior Software Engineer with 5+ years of experience, specializing in ";
   static const String bioHighlight1 =
-      'Flutter & native iOS development';
+      'Flutter, native iOS & Node.js';
   static const String bioMid = ' with deep expertise in ';
   static const String bioHighlight2 =
-      'IoT, BLE, and real-time communication';
+      'IoT, BLE, and AWS serverless architectures';
   static const String bioTrailing =
-      ". I build high-performance, scalable mobile applications — from "
-      "FDA-compliant medical device monitors to smart thermostat controllers "
-      "and real-time warehouse tracking systems.\n\n"
+      ". I build high-performance mobile apps end-to-end — from "
+      "pixel-perfect Flutter UIs to Node.js-powered AWS Lambda backends "
+      "with Cognito auth and API Gateway.\n\n"
       "Currently a Senior Software Engineer at Gadgeon Smart Systems, I lead "
-      "complex mobile projects integrating payment gateways, IoT protocols, "
-      "and cloud platforms. I'm passionate about clean architecture (MVVM), "
-      "mentoring developers, and shipping products that deliver seamless "
-      "user experiences.";
+      "complex projects integrating payment gateways, IoT protocols, and "
+      "cloud platforms. From FDA-compliant medical monitors to smart "
+      "thermostat controllers — I ship the full stack. Passionate about "
+      "clean architecture (MVVM), mentoring developers, and delivering "
+      "seamless user experiences.";
 
   static const List<({String label, Color color})> skillChips = [
     (label: 'Flutter', color: AppColors.electricBlue),
     (label: 'Dart', color: AppColors.cyberpunkPink),
-    (label: 'Swift', color: AppColors.electricBlue),
+    (label: 'Node.js', color: AppColors.electricBlue),
+    (label: 'Swift', color: AppColors.cyberpunkPink),
+    (label: 'AWS Lambda', color: AppColors.electricBlue),
     (label: 'Firebase', color: AppColors.cyberpunkPink),
     (label: 'REST API', color: AppColors.electricBlue),
     (label: 'BLE', color: AppColors.cyberpunkPink),
     (label: 'MQTT', color: AppColors.electricBlue),
     (label: 'IoT', color: AppColors.cyberpunkPink),
-    (label: 'MVVM', color: AppColors.electricBlue),
-    (label: 'Stripe', color: AppColors.cyberpunkPink),
+    (label: 'Cognito', color: AppColors.electricBlue),
+    (label: 'MVVM', color: AppColors.cyberpunkPink),
   ];
 
   // ── Tech Stack ───────────────────────────────────────
@@ -67,19 +70,34 @@ abstract final class PortfolioData {
       color: AppColors.cyberpunkPink,
     ),
     TechItemModel(
+      name: 'Node.js',
+      icon: Icons.dns,
+      color: Color(0xFF68A063),
+    ),
+    TechItemModel(
       name: 'Swift',
       icon: Icons.apple,
       color: Color(0xFFFA7343),
     ),
     TechItemModel(
+      name: 'AWS Lambda',
+      icon: Icons.cloud,
+      color: Color(0xFFFF9900),
+    ),
+    TechItemModel(
+      name: 'Cognito',
+      icon: Icons.verified_user,
+      color: Color(0xFFDD344C),
+    ),
+    TechItemModel(
+      name: 'API Gateway',
+      icon: Icons.api,
+      color: Color(0xFF6C3DCC),
+    ),
+    TechItemModel(
       name: 'Firebase',
       icon: Icons.local_fire_department,
       color: Color(0xFFFFCA28),
-    ),
-    TechItemModel(
-      name: 'REST API',
-      icon: Icons.api,
-      color: Color(0xFF61DAFB),
     ),
     TechItemModel(
       name: 'BLE',
@@ -97,24 +115,9 @@ abstract final class PortfolioData {
       color: Color(0xFF00B894),
     ),
     TechItemModel(
-      name: 'Provider',
-      icon: Icons.account_tree,
-      color: Color(0xFF6C5CE7),
-    ),
-    TechItemModel(
-      name: 'GetX',
-      icon: Icons.speed,
-      color: Color(0xFF8E44AD),
-    ),
-    TechItemModel(
       name: 'Git',
       icon: Icons.merge_type,
       color: Color(0xFFF05032),
-    ),
-    TechItemModel(
-      name: 'Stripe',
-      icon: Icons.payment,
-      color: Color(0xFF635BFF),
     ),
   ];
 
@@ -134,11 +137,12 @@ abstract final class PortfolioData {
     ProjectModel(
       title: 'Medical Device Monitor',
       description:
-          'An FDA-compliant application for monitoring patient data using BLE '
-          'and REST API. Features offline-first architecture with auto-sync, '
-          'therapy scheduling via local notifications, and a clean, intuitive '
-          'Flutter UI built to stringent regulatory standards.',
-      tags: ['Flutter', 'BLE', 'FDA', 'Offline-First'],
+          'An FDA-compliant app for monitoring patient data via BLE. '
+          'Built Node.js AWS Lambda functions to store device data in AWS '
+          'databases, with Cognito auth and API Gateway. Features offline-first '
+          'architecture with auto-sync, therapy scheduling, and a clean '
+          'Flutter UI to stringent regulatory standards.',
+      tags: ['Flutter', 'BLE', 'Node.js', 'AWS Lambda', 'Cognito'],
       gradient: [Color(0xFF10B981), Color(0xFF047857)],
       icon: Icons.health_and_safety,
     ),
@@ -185,8 +189,8 @@ abstract final class PortfolioData {
   ];
 
   static const String contactHeadline =
-      "Have a Flutter project or an IoT app idea? Let's build it together.\n"
-      "I'm always open to discussing exciting mobile development opportunities.";
+      "Need a Flutter app with a serverless backend? An IoT solution end-to-end?\n"
+      "I'm always open to discussing exciting development opportunities.";
 
   static const String footerText =
       '© 2026 Nandu Viswanathan. Built with Flutter & a lot of caffeine.';
