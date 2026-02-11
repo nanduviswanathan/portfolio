@@ -42,7 +42,7 @@ class _AnimatedEntranceState extends State<AnimatedEntrance>
 
     Future.delayed(widget.delay, () {
       if (mounted) {
-        _started = true;
+        setState(() => _started = true);
         _controller.forward();
       }
     });
