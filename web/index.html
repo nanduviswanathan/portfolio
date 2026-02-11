@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Nandu Viswanathan — Flutter Developer, Node.js Developer, and Cloud Architect. Architecting Clouds & Crafting Apps.">
+  <meta name="keywords" content="Nandu Viswanathan, Flutter Developer, Node.js, Cloud Architect, AWS, GCP, Portfolio">
+  <meta name="author" content="Nandu Viswanathan">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Nandu Viswanathan — Portfolio">
+  <meta property="og:description" content="Flutter Developer, Node.js Developer, and Cloud Architect. Architecting Clouds & Crafting Apps.">
+  <meta property="og:type" content="website">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Nandu V.">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Theme color for browser chrome -->
+  <meta name="theme-color" content="#0D0D0D">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>Nandu Viswanathan — Portfolio</title>
+  <link rel="manifest" href="manifest.json">
+</head>
+<body style="margin:0; background-color:#0D0D0D; overflow:hidden;">
+  <!-- Styled loading screen while Flutter boots -->
+  <div id="loading" style="
+    display:flex; justify-content:center; align-items:center;
+    height:100vh; width:100vw; background:#0D0D0D;
+    flex-direction:column; font-family:'Segoe UI',sans-serif;
+  ">
+    <div style="
+      width:48px; height:48px; border:3px solid #1A1A2E;
+      border-top-color:#FF007F; border-right-color:#00FFFF;
+      border-radius:50%; animation:spin 0.8s linear infinite;
+    "></div>
+    <p style="color:#8892B0; margin-top:24px; font-size:14px; letter-spacing:2px;">LOADING...</p>
+  </div>
+  <style>@keyframes spin { to { transform: rotate(360deg); } }</style>
+  <script>
+    window.addEventListener('flutter-first-frame', function () {
+      var el = document.getElementById('loading');
+      if (el) el.remove();
+    });
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
