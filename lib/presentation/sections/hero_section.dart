@@ -4,13 +4,14 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 
 import '../../core/services/resume_generator.dart';
 import '../../core/theme/app_colors.dart';
-import '../../core/utils/url_helper.dart';
 import '../../data/portfolio_data.dart';
 import '../widgets/animated_entrance.dart';
 import '../widgets/hover_scale_button.dart';
 
 class HeroSection extends StatelessWidget {
-  const HeroSection({super.key});
+  final VoidCallback? onViewProjects;
+
+  const HeroSection({super.key, this.onViewProjects});
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +20,10 @@ class HeroSection extends StatelessWidget {
 
     return SizedBox(
       height: size.height,
-      child: Center(
+      child: Align(
+        alignment: Alignment.centerLeft,
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: isMobile ? 24 : 80),
+          padding: EdgeInsets.symmetric(horizontal: isMobile ? 24 : 48),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -74,10 +76,12 @@ class HeroSection extends StatelessWidget {
                       repeatForever: true,
                       pause: const Duration(milliseconds: 1500),
                       animatedTexts: PortfolioData.typewriterLines
-                          .map((line) => TypewriterAnimatedText(
-                                line,
-                                speed: const Duration(milliseconds: 60),
-                              ))
+                          .map(
+                            (line) => TypewriterAnimatedText(
+                              line,
+                              speed: const Duration(milliseconds: 60),
+                            ),
+                          )
                           .toList(),
                     ),
                   ),
@@ -95,13 +99,7 @@ class HeroSection extends StatelessWidget {
                     _HeroButton(
                       label: 'View Projects',
                       filled: true,
-                      onTap: () {
-                        Scrollable.ensureVisible(
-                          context,
-                          duration: const Duration(milliseconds: 800),
-                          curve: Curves.easeInOutCubic,
-                        );
-                      },
+                      onTap: () => onViewProjects?.call(),
                     ),
                     _HeroButton(
                       label: 'Download Resume',
@@ -147,8 +145,9 @@ class _HeroButton extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
               gradient: filled ? AppColors.pinkGradient : null,
-              border:
-                  filled ? null : Border.all(color: AppColors.electricBlue, width: 2),
+              border: filled
+                  ? null
+                  : Border.all(color: AppColors.electricBlue, width: 2),
               boxShadow: [
                 BoxShadow(
                   color: filled

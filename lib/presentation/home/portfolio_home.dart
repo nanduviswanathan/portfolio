@@ -64,7 +64,10 @@ class _PortfolioHomeState extends State<PortfolioHome> {
             physics: const BouncingScrollPhysics(),
             child: Column(
               children: [
-                HeroSection(key: _heroKey),
+                HeroSection(
+                  key: _heroKey,
+                  onViewProjects: () => _scrollTo(_projectsKey),
+                ),
                 AboutSection(key: _aboutKey),
                 TechStackSection(key: _techKey),
                 ProjectsSection(key: _projectsKey),
@@ -87,8 +90,7 @@ class _PortfolioHomeState extends State<PortfolioHome> {
       elevation: 0,
       centerTitle: false,
       title: ShaderMask(
-        shaderCallback: (bounds) =>
-            AppColors.neonGradient.createShader(bounds),
+        shaderCallback: (bounds) => AppColors.neonGradient.createShader(bounds),
         child: Text(
           '<NV/>',
           style: GoogleFonts.firaCode(
@@ -128,10 +130,7 @@ class _PortfolioHomeState extends State<PortfolioHome> {
           PopupMenuItem(value: 'tech', child: Text('Tech Stack')),
           PopupMenuItem(value: 'projects', child: Text('Projects')),
           PopupMenuItem(value: 'contact', child: Text('Contact')),
-          PopupMenuItem(
-            value: 'resume',
-            child: Text('Download Resume'),
-          ),
+          PopupMenuItem(value: 'resume', child: Text('Download Resume')),
         ],
       ),
     ];
@@ -208,9 +207,13 @@ class _NavButtonState extends State<_NavButton> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(6),
               border: Border.all(
-                color: _hovered ? AppColors.cyberpunkPink : AppColors.electricBlue,
+                color: _hovered
+                    ? AppColors.cyberpunkPink
+                    : AppColors.electricBlue,
               ),
-              color: _hovered ? AppColors.cyberpunkPink.withAlpha(30) : Colors.transparent,
+              color: _hovered
+                  ? AppColors.cyberpunkPink.withAlpha(30)
+                  : Colors.transparent,
             ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
@@ -218,7 +221,9 @@ class _NavButtonState extends State<_NavButton> {
                 Icon(
                   Icons.download,
                   size: 14,
-                  color: _hovered ? AppColors.cyberpunkPink : AppColors.electricBlue,
+                  color: _hovered
+                      ? AppColors.cyberpunkPink
+                      : AppColors.electricBlue,
                 ),
                 const SizedBox(width: 6),
                 Text(
@@ -226,7 +231,9 @@ class _NavButtonState extends State<_NavButton> {
                   style: GoogleFonts.poppins(
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
-                    color: _hovered ? AppColors.cyberpunkPink : AppColors.electricBlue,
+                    color: _hovered
+                        ? AppColors.cyberpunkPink
+                        : AppColors.electricBlue,
                   ),
                 ),
               ],
@@ -256,7 +263,7 @@ class _NavButtonState extends State<_NavButton> {
                       Shadow(
                         color: AppColors.electricBlue.withAlpha(150),
                         blurRadius: 12,
-                      )
+                      ),
                     ]
                   : null,
             ),

@@ -67,18 +67,13 @@ class AboutSection extends StatelessWidget {
             ),
           ],
         ),
-        child: Container(
-          margin: const EdgeInsets.all(3),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(18),
-            color: AppColors.surface,
-          ),
-          child: Center(
-            child: ShaderMask(
-              shaderCallback: (bounds) =>
-                  AppColors.neonGradient.createShader(bounds),
-              child: const Icon(Icons.person, size: 80, color: Colors.white),
-            ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(18),
+          child: Image.asset(
+            'assets/images/profile.jpeg',
+            width: 194,
+            height: 194,
+            fit: BoxFit.cover,
           ),
         ),
       ),

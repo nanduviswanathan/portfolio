@@ -17,8 +17,7 @@ abstract final class ResumeGenerator {
     final pdf = await _buildPdf();
     await Printing.sharePdf(
       bytes: pdf,
-      filename:
-          'Nandu Viswanathan_senior_software_engineer_flutter_developer.pdf',
+      filename: 'Nandu Viswanathan_senior_software_engineer.pdf',
     );
   }
 
@@ -36,14 +35,8 @@ abstract final class ResumeGenerator {
       fontSize: 20,
       fontWeight: pw.FontWeight.bold,
     );
-    final titleStyle = pw.TextStyle(
-      fontSize: 11,
-      color: PdfColors.grey700,
-    );
-    final contactStyle = pw.TextStyle(
-      fontSize: 9,
-      color: PdfColors.grey600,
-    );
+    final titleStyle = pw.TextStyle(fontSize: 11, color: PdfColors.grey700);
+    final contactStyle = pw.TextStyle(fontSize: 9, color: PdfColors.grey600);
     final sectionLabel = pw.TextStyle(
       fontSize: 10,
       fontWeight: pw.FontWeight.bold,
@@ -74,9 +67,7 @@ abstract final class ResumeGenerator {
           // ═══════════════════════════════════════════════
           // HEADER — Name, Title, Contact (centered)
           // ═══════════════════════════════════════════════
-          pw.Center(
-            child: pw.Text(PortfolioData.resumeName, style: nameStyle),
-          ),
+          pw.Center(child: pw.Text(PortfolioData.resumeName, style: nameStyle)),
           pw.SizedBox(height: 2),
           pw.Center(
             child: pw.Text(PortfolioData.resumeTitle, style: titleStyle),
@@ -93,14 +84,10 @@ abstract final class ResumeGenerator {
                 pw.Text(PortfolioData.resumeEmail, style: contactStyle),
                 _dot(),
                 pw.UrlLink(
-                  destination:
-                      'https://www.linkedin.com/in/nanduviswanathan',
+                  destination: 'https://www.linkedin.com/in/nanduviswanathan',
                   child: pw.Text(
                     'https://www.linkedin.com/in/nanduviswanathan',
-                    style: pw.TextStyle(
-                      fontSize: 9,
-                      color: PdfColors.blue800,
-                    ),
+                    style: pw.TextStyle(fontSize: 9, color: PdfColors.blue800),
                   ),
                 ),
               ],
@@ -128,9 +115,11 @@ abstract final class ResumeGenerator {
             child: pw.Column(
               crossAxisAlignment: pw.CrossAxisAlignment.start,
               children: [
-                for (int i = 0;
-                    i < PortfolioData.resumeExperience.length;
-                    i++) ...[
+                for (
+                  int i = 0;
+                  i < PortfolioData.resumeExperience.length;
+                  i++
+                ) ...[
                   if (i > 0) pw.SizedBox(height: 10),
                   _experienceBlock(
                     PortfolioData.resumeExperience[i],
@@ -181,9 +170,11 @@ abstract final class ResumeGenerator {
             child: pw.Column(
               crossAxisAlignment: pw.CrossAxisAlignment.start,
               children: [
-                for (int i = 0;
-                    i < PortfolioData.resumeProjects.length;
-                    i++) ...[
+                for (
+                  int i = 0;
+                  i < PortfolioData.resumeProjects.length;
+                  i++
+                ) ...[
                   if (i > 0) pw.SizedBox(height: 8),
                   _projectBlock(
                     PortfolioData.resumeProjects[i],
@@ -255,10 +246,7 @@ abstract final class ResumeGenerator {
             child: pw.Text(label, style: sectionLabel),
           ),
           pw.SizedBox(width: 12),
-          pw.Expanded(
-            flex: _contentFlex.toInt(),
-            child: child,
-          ),
+          pw.Expanded(flex: _contentFlex.toInt(), child: child),
         ],
       ),
     );
