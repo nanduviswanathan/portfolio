@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 
+import '../../core/services/resume_generator.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/utils/url_helper.dart';
 import '../../data/portfolio_data.dart';
@@ -87,7 +88,9 @@ class HeroSection extends StatelessWidget {
               // ── CTA Buttons ────────────────────────────
               AnimatedEntrance(
                 delay: const Duration(milliseconds: 1200),
-                child: Row(
+                child: Wrap(
+                  spacing: 16,
+                  runSpacing: 12,
                   children: [
                     _HeroButton(
                       label: 'View Projects',
@@ -100,11 +103,11 @@ class HeroSection extends StatelessWidget {
                         );
                       },
                     ),
-                    const SizedBox(width: 16),
                     _HeroButton(
-                      label: 'Get in Touch',
+                      label: 'Download Resume',
                       filled: false,
-                      onTap: () => launchExternalUrl(PortfolioData.email),
+                      icon: Icons.download,
+                      onTap: () => ResumeGenerator.downloadResume(),
                     ),
                   ],
                 ),
@@ -122,11 +125,13 @@ class _HeroButton extends StatelessWidget {
   final String label;
   final bool filled;
   final VoidCallback onTap;
+  final IconData? icon;
 
   const _HeroButton({
     required this.label,
     required this.filled,
     required this.onTap,
+    this.icon,
   });
 
   @override
@@ -154,13 +159,22 @@ class _HeroButton extends StatelessWidget {
                 ),
               ],
             ),
-            child: Text(
-              label,
-              style: GoogleFonts.poppins(
-                color: Colors.white,
-                fontWeight: FontWeight.w600,
-                fontSize: 15,
-              ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (icon != null) ...[
+                  Icon(icon, color: Colors.white, size: 18),
+                  const SizedBox(width: 8),
+                ],
+                Text(
+                  label,
+                  style: GoogleFonts.poppins(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 15,
+                  ),
+                ),
+              ],
             ),
           ),
         ),
